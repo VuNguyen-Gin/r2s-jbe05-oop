@@ -128,7 +128,7 @@ public class CourseManagement {
                 yield course.getDuration() == durationVal;
             }
             case "flag" -> {
-                if (!Validator.validateFlag(dataStr)) { // Tái sử dụng Validator
+                if (!Validator.validateFlag(dataStr)) {
                     throw new ValidationException("Loại cờ tìm kiếm không hợp lệ.");
                 }
                 String searchFlag = dataStr.equalsIgnoreCase("n/a") ? Constants.FLAG_NA : dataStr.toLowerCase(Locale.ROOT);
@@ -144,7 +144,7 @@ public class CourseManagement {
         if (courses.isEmpty()) { System.out.println("Danh sách khóa học trống."); return; }
         System.out.println("\n--- Hiển thị khóa học theo cờ (flag) ---");
 
-        List<Course> result = new ArrayList<>(); // Dùng List
+        List<Course> result = new ArrayList<>();
         try {
             String flag;
             while(true){

@@ -1,7 +1,7 @@
 package org.example.session06.training.entities;
 
 
-import org.example.session06.training.exceptions.ValidationException; // Import exception
+import org.example.session06.training.exceptions.ValidationException;
 import org.example.session06.training.utils.Constants;
 import org.example.session06.training.utils.ScannerUtil;
 import org.example.session06.training.utils.Validator;
@@ -17,7 +17,7 @@ public class Course {
     private short duration;
     private String flag;
 
-    // --- Constructors (Giữ nguyên) ---
+
     public Course() {}
     public Course(String code, String name, boolean status, short duration, String flag) {
 
@@ -41,8 +41,8 @@ public class Course {
     }
 
 
-    public void input(Scanner sc, ArrayList<Course> courses) throws ValidationException { /
-        // 1. Nhập và Validate Code
+    public void input(Scanner sc, ArrayList<Course> courses) throws ValidationException {
+
         while (true) {
             String inputCode = ScannerUtil.readNonEmpty("Nhập mã khóa học (RAxxx): ").toUpperCase(Locale.ROOT);
             if (!Validator.validateCode(inputCode)) {
@@ -68,7 +68,7 @@ public class Course {
 
 
         while(true){
-            String inputFlag = ScannerUtil.readNonEmpty("Nhập loại cờ (optional/prerequisite/N/A): "); // Có thể ném VE
+            String inputFlag = ScannerUtil.readNonEmpty("Nhập loại cờ (optional/prerequisite/N/A): ");
             if (Validator.validateFlag(inputFlag)) {
                 this.flag = inputFlag.equalsIgnoreCase("n/a") ? Constants.FLAG_NA : inputFlag.toLowerCase(Locale.ROOT);
                 break;

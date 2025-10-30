@@ -29,7 +29,7 @@ public final class ScannerUtil {
         String value = sc.nextLine().trim().toLowerCase(Locale.ROOT);
         if ("true".equals(value)) return true;
         if ("false".equals(value)) return false;
-        // Ném exception nếu không phải true/false
+
         throw new ValidationException("Vui lòng nhập 'true' hoặc 'false'.");
     }
 
@@ -64,7 +64,6 @@ public final class ScannerUtil {
         }
     }
 
-    /** Đóng Scanner. */
     public static void closeScanner() {
         sc.close();
     }
